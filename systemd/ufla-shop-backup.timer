@@ -1,0 +1,10 @@
+[Unit]
+Description=Backup diário do banco loja às 3h
+
+[Timer]
+OnCalendar=*-*-* 03:00:00
+# Se a máquina estava desligada às 3h, roda assim que ligar.
+Persistent=true
+
+[Install]
+WantedBy=timers.target

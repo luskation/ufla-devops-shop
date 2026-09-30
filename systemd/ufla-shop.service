@@ -1,0 +1,16 @@
+[Unit]
+Description=ufla-devops-shop (API FastAPI)
+After=network-online.target postgresql.service redis-server.service
+Wants=network-online.target
+
+[Service]
+User=ufla-shop
+Group=ufla-shop
+WorkingDirectory=/opt/ufla-shop
+EnvironmentFile=/etc/ufla-shop.env
+# Só em 127.0.0.1: de fora, quem atende é o Nginx.
+ExecStart=/opt/ufla-shop/.venv/bin/uvicorn app:api --host 127.0.0.1 --port 8000
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

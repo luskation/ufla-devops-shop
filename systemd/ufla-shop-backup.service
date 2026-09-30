@@ -1,0 +1,8 @@
+[Unit]
+Description=Backup do banco loja (pg_dump com rotação)
+After=postgresql.service
+
+[Service]
+Type=oneshot
+EnvironmentFile=/etc/ufla-shop.env
+ExecStart=/opt/ufla-shop/scripts/backup.sh

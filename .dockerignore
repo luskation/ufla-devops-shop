@@ -1,0 +1,29 @@
+# Lista de exclusao: so app/, static/ e requirements.txt entram no contexto.
+.git
+.github
+.gitignore
+.venv
+venv
+__pycache__
+**/__pycache__
+*.py[cod]
+.pytest_cache
+.ruff_cache
+tests
+*.db
+.env
+.env.*
+
+# Nada disto e necessario em tempo de execucao
+alunos
+analises
+dados
+docs
+nginx
+scripts
+systemd
+*.md
+requirements-dev.txt
+pyproject.toml
+Dockerfile
+.dockerignore
